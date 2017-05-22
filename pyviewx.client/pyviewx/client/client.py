@@ -73,7 +73,8 @@ class iViewXClient(DatagramProtocol):
 		for d in self.dispatchers:
 			d.trigger(e="CONNECTION_REFUSED", inResponse=None)
 
-	def datagramReceived(self, data, (host, port)):
+	def datagramReceived(self, data, xxx_todo_changeme):
+		(host, port) = xxx_todo_changeme
 		data = data.split()
 		for d in self.dispatchers:
 			d.trigger(e=data[0], inResponse=data[1:])

@@ -17,4 +17,4 @@
 # along with PyViewX.  If not, see <http://www.gnu.org/licenses/>.
 #===============================================================================
 
-from client import Dispatcher, iViewXception, iViewXClient
+from .client import Dispatcher, iViewXception, iViewXClient

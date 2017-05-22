@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with PyViewX.  If not, see <http://www.gnu.org/licenses/>.
 #===============================================================================
-from __future__ import division
+
 from pyviewx.client import Dispatcher
 from twisted.internet.task import LoopingCall
 import pygame
@@ -53,8 +53,8 @@ class CalibratorGL(Calibrator):
 			pygl2d.draw.rect(r, (0, 0, 0), 1)
 			f = pygame.font.Font(None, 18)
 			if self.eye_position and self.eye_position[4] > 550 and self.eye_position[5] > 550 and self.eye_position[4] < 850 and self.eye_position[5] < 850:
-				left = map(int, (self.eye_position[0] / 99.999 * self.center_x + self.center_x, self.eye_position[2] / -99.999 * self.center_y + self.center_y))
-				right = map(int, (self.eye_position[1] / 99.999 * self.center_x + self.center_x, self.eye_position[3] / -99.999 * self.center_y + self.center_y))
+				left = list(map(int, (self.eye_position[0] / 99.999 * self.center_x + self.center_x, self.eye_position[2] / -99.999 * self.center_y + self.center_y)))
+				right = list(map(int, (self.eye_position[1] / 99.999 * self.center_x + self.center_x, self.eye_position[3] / -99.999 * self.center_y + self.center_y)))
 				l = int((700 - self.eye_position[4]) / 7 + 20)
 				r = int((700 - self.eye_position[5]) / 7 + 20)
 				if l > 0:
